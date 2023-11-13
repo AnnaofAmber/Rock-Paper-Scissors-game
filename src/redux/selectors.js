@@ -1,0 +1,1 @@
+export const selectAction = state => state.actions.action
