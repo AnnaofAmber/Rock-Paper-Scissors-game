@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import scss from './GameStarted.module.scss'
 import clsx from "clsx"
-import { selectAction, selectPickedAction, selectScore, selectStatus } from 'redux/selectors'
+import { selectAction, selectPickedAction, selectStatus } from 'redux/selectors'
 import { setStatus } from 'redux/statusSlice'
 import { useEffect } from 'react'
 import { setScore } from 'redux/scoreSlice'
