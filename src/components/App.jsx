@@ -14,7 +14,7 @@ const action = useSelector(selectAction)
       <Layout> 
       <Header/>
       {action === 'unselected' && <RockPaperScissors/>}
-      {action !== ' unselected' && <GameStarted/>}
+      {action !== 'unselected' && <GameStarted/>}
       </Layout>
     </div>
   );
