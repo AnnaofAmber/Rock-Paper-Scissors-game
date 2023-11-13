@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import scss from './WinScore.module.scss'
 import { selectScore } from 'redux/selectors'
 
