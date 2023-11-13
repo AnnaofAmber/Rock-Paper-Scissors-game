@@ -1,8 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import scss from './WinScore.module.scss'
-import { selectScore, selectStatus } from 'redux/selectors'
-import { useEffect } from 'react'
-import { setScore } from 'redux/scoreSlice'
+import { selectScore } from 'redux/selectors'
+
 
 
 export const WinScore = () => {
