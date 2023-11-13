@@ -11,3 +11,10 @@ export const pickedAction = Object.freeze({
     actionScissors: 'scissors',
     actionRock: 'rock'
   });
+
+  export const status = Object.freeze({
+    unselected: 'unselected',
+    win: 'win',
+    lose: 'lose',
+    draw: 'draw',
+  });

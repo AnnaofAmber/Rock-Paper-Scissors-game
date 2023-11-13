@@ -1,15 +1,60 @@
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import scss from './GameStarted.module.scss'
 import clsx from "clsx"
-import { selectAction, selectPickedAction } from 'redux/selectors'
+import { selectAction, selectPickedAction, selectStatus } from 'redux/selectors'
+import { setStatus } from 'redux/statusSlice'
+import { useEffect } from 'react'
 
 export const GameStarted = () =>{
+    const dispatch = useDispatch()
     const action = useSelector(selectAction)
     const pickedAction = useSelector(selectPickedAction)
+    const status = useSelector(selectStatus)
+    useEffect(()=>{
+        const statusPick = () =>{
+            if(action === 'paper'){
+                if(pickedAction === 'paper'){
+                    dispatch(setStatus('draw'))
+                }
+                else if (pickedAction === 'scissors'){
+                    dispatch(setStatus('lose'))
+                }
+                else{
+                    dispatch(setStatus('win'))
+                }
+            }
+            if(action === 'scissors'){
+                if(pickedAction === 'paper'){
+                    dispatch(setStatus('win'))
+                }
+                else if (pickedAction === 'scissors'){
+                    dispatch(setStatus('draw'))
+                }
+                else{
+                    dispatch(setStatus('lose'))
+                }
+            }
+            if(action === 'rock'){
+                if(pickedAction === 'paper'){
+                    dispatch(setStatus('lose'))
+                }
+                else if (pickedAction === 'scissors'){
+                    dispatch(setStatus('win'))
+                }
+                else{
+                    dispatch(setStatus('draw'))
+                }
+            }
+        }
+
+        statusPick()
+      
+    }, [action, dispatch,pickedAction])
 
     return(
         <div className={scss.container}>
 <div className={scss['action-container']} >
+    <div className={clsx({[scss.status]:status !== 'unselected'})}></div>
 <div className={clsx(scss.action, {
             [scss.paper]:action === 'paper', [scss.scissors]:action === 'scissors', [scss.rock]:action === 'rock'
         })}></div>
@@ -22,6 +67,7 @@ export const GameStarted = () =>{
         })}></div>
     <p className={scss.text}>THE HOUSE PICKED</p>
 </div>
+
         </div>
     )
 }

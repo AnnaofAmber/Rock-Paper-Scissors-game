@@ -22,10 +22,13 @@ export const RockPaperScissors = () =>{
         }
 
     }
+    
     const handleActionClick = action => {
         dispatch(setAction(action))
         actionPick()
+        
     }
+
 
     return(
 <div className={scss.container}>
