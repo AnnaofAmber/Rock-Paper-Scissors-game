@@ -6,6 +6,7 @@ import { RockPaperScissors } from './RockPaperScissors/RockPaperScissors';
 import { selectAction, selectStatus } from 'redux/selectors';
 import { GameStarted } from './GameStarted/GameStarted';
 import { GameOver } from './GameOver/GameOver';
+import { ModalRules } from './ModalRules/ModalRules';
 
 export const App = () => {
 const action = useSelector(selectAction)
@@ -17,6 +18,7 @@ const status = useSelector(selectStatus)
       {action === 'unselected' && <RockPaperScissors/>}
       {action !== 'unselected' && <GameStarted/>}
       {status !== 'unselected' && <GameOver/>}
+      <ModalRules/>
       </Layout>
     </div>
   );
