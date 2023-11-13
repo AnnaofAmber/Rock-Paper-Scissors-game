@@ -7,11 +7,11 @@ import { actions } from 'redux/constants'
 export const RockPaperScissors = () =>{
     const dispatch = useDispatch()
     const action = useSelector(selectAction)
-    console.log(action);
+
     const handleActionClick = action => dispatch(setAction(action))
 
     return(
-        <div className={scss.container}>
+<div className={scss.container}>
             <button className={scss.paper} selected={action === actions.paper} onClick={()=>handleActionClick(actions.actionPaper)}></button>
             <button className={scss.scissors} selected={action === actions.scissors} onClick={()=>handleActionClick(actions.actionScissors)}></button>
             <button className={scss.rock} selected={action === actions.rock} onClick={()=>handleActionClick(actions.actionRock)}></button>
