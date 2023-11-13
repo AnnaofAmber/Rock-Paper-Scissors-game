@@ -7,9 +7,13 @@ export const ModalRules = () => {
   const handleModalClick = () => {
     setIsModal(true);
   };
+  const handleCloseClisk = () => {
+  setIsModal(false)
+  }
+
   return (
     <div>
-      <button onClick={handleModalClick}>Rules</button>
+      <button onClick={handleModalClick} className={scss['btn-open']}>Rules</button>
       {isModal && (
         <div className={scss.overlay}>
           <div className={scss.modal}>
@@ -17,7 +21,7 @@ export const ModalRules = () => {
               {' '}
               <h2 className={scss.title}>rules</h2>
               <div className={scss.rules}></div>
-              <button className={scss['btn-close']}></button>
+              <button onClick={handleCloseClisk} className={scss['btn-close']}></button>
             </div>
           </div>
         </div>
