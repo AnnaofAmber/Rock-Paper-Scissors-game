@@ -1,15 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux'
 import scss from './GameStarted.module.scss'
 import clsx from "clsx"
-import { selectAction, selectPickedAction, selectStatus } from 'redux/selectors'
+import { selectAction, selectPickedAction, selectScore, selectStatus } from 'redux/selectors'
 import { setStatus } from 'redux/statusSlice'
 import { useEffect } from 'react'
+import { setScore } from 'redux/scoreSlice'
 
 export const GameStarted = () =>{
     const dispatch = useDispatch()
     const action = useSelector(selectAction)
     const pickedAction = useSelector(selectPickedAction)
     const status = useSelector(selectStatus)
+
     useEffect(()=>{
         const statusPick = () =>{
             if(action === 'paper'){
@@ -21,11 +23,13 @@ export const GameStarted = () =>{
                 }
                 else{
                     dispatch(setStatus('win'))
+                    dispatch(setScore(0.5))
                 }
             }
             if(action === 'scissors'){
                 if(pickedAction === 'paper'){
                     dispatch(setStatus('win'))
+                    dispatch(setScore(0.5))
                 }
                 else if (pickedAction === 'scissors'){
                     dispatch(setStatus('draw'))
@@ -40,6 +44,7 @@ export const GameStarted = () =>{
                 }
                 else if (pickedAction === 'scissors'){
                     dispatch(setStatus('win'))
+                    dispatch(setScore(0.5))
                 }
                 else{
                     dispatch(setStatus('draw'))

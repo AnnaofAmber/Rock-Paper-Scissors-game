@@ -1,12 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux'
 import scss from './GameOver.module.scss'
-import { selectStatus } from 'redux/selectors'
+import {  selectStatus } from 'redux/selectors'
 import { setAction } from 'redux/actionSlice'
 import { setPickedAction } from 'redux/pickedActionSlice'
 import { setStatus } from 'redux/statusSlice'
 
+
 export const GameOver = () => {
 const dispatch = useDispatch()
+
 const status = useSelector(selectStatus)
 
 const handleClick = () =>{
