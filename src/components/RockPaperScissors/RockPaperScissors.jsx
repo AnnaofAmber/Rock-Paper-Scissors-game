@@ -11,10 +11,10 @@ export const RockPaperScissors = () =>{
     
     const actionPick = () =>{
         const random = Math.floor(Math.random() * 10);
-        if(random%2===0){
+        if(random === 1 || random === 2 || random === 3 ){
             dispatch(setPickedAction('paper'))
         }
-        else if(random%2 !==0){
+        else if(random === 4 || random === 5 || random === 6){
             dispatch(setPickedAction('scissors'))
         }
         else {
