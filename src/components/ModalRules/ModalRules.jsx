@@ -1,18 +1,24 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import scss from './ModalRules.module.scss';
 
 export const ModalRules = () => {
   const [isModal, setIsModal] = useState(false);
+  useEffect(()=>{
+    if (isModal) {
+      document.body.style.overflow = 'hidden';
+    }
+  },[isModal])
 
   const handleModalClick = () => {
     setIsModal(true);
+
   };
   const handleCloseClisk = () => {
   setIsModal(false)
   }
 
   return (
-    <div>
+    <div className={scss.container}>
       <button onClick={handleModalClick} className={scss['btn-open']}>Rules</button>
       {isModal && (
         <div className={scss.overlay}>
