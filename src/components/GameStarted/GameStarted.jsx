@@ -67,6 +67,7 @@ export const GameStarted = () =>{
 </div>
 
 <div className={scss['action-container']}>
+{pickedAction === 'unselected' && <div className={scss.unselected}></div>}
 <div className={clsx(scss.action, {
             [scss.paper]:pickedAction === 'paper', [scss.scissors]:pickedAction === 'scissors', [scss.rock]:pickedAction === 'rock'
         })}></div>
