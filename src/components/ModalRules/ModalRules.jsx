@@ -7,6 +7,9 @@ export const ModalRules = () => {
     if (isModal) {
       document.body.style.overflow = 'hidden';
     }
+    else{
+      document.body.style.overflow = 'scroll';
+    }
   },[isModal])
 
   const handleModalClick = () => {
