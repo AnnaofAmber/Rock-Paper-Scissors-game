@@ -59,9 +59,9 @@ export const GameStarted = () =>{
     return(
         <div className={scss.container}>
 <div className={scss['action-container']} >
-    <div className={clsx({[scss.status]:status !== 'unselected'})}></div>
+    <div className={clsx(scss.status,{[scss.win]:status === 'win', [scss.lose]: status=== 'lose'})}></div>
 <div className={clsx(scss.action, {
-            [scss.paper]:action === 'paper', [scss.scissors]:action === 'scissors', [scss.rock]:action === 'rock'
+            [scss.paper]:action === 'paper', [scss.scissors]:action === 'scissors', [scss.rock]:action === 'rock',
         })}></div>
         <p className={scss.text}>YOU PICKED</p>
 </div>
