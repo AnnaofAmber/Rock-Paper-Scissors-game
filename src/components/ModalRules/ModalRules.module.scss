@@ -44,6 +44,8 @@ font-weight: 600;
 letter-spacing: 2.5px;
 text-transform: uppercase;
 
+cursor: pointer;
+
 @media only screen and (min-width: 768px) {
   margin: 0;
 }
@@ -116,6 +118,8 @@ margin-bottom: 90px;
     width: 20px;
     height: 20px;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath opacity='0.25' fill-rule='evenodd' clip-rule='evenodd' d='M19.0919 2.12132L16.9706 0L9.54594 7.42462L2.12132 0L0 2.12132L7.42462 9.54594L0 16.9706L2.12132 19.0919L9.54594 11.6673L16.9706 19.0919L19.0919 16.9706L11.6673 9.54594L19.0919 2.12132Z' fill='%233B4262'/%3E%3C/svg%3E");
+
+    cursor: pointer;
 
     @media only screen and (min-width: 768px) {
     position: absolute;
