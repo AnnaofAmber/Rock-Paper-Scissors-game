@@ -4,6 +4,7 @@ import { selectAction } from 'redux/selectors'
 import { setAction } from 'redux/actionSlice'
 import { actions } from 'redux/constants'
 import { setPickedAction } from 'redux/pickedActionSlice'
+import clsx from 'clsx'
 
 export const RockPaperScissors = () =>{
     const dispatch = useDispatch()
@@ -32,9 +33,11 @@ export const RockPaperScissors = () =>{
 
     return(
 <div className={scss.container}>
-            <button className={scss.paper} selected={action === actions.paper} onClick={()=>handleActionClick(actions.actionPaper)}></button>
-            <button className={scss.scissors} selected={action === actions.scissors} onClick={()=>handleActionClick(actions.actionScissors)}></button>
-            <button className={scss.rock} selected={action === actions.rock} onClick={()=>handleActionClick(actions.actionRock)}></button>
+            <button className={clsx(scss.action, [scss.paper])} selected={action === actions.paper} onClick={()=>handleActionClick(actions.actionPaper)}><div className={scss.eclipse}></div>
+            </button>
+            <button className={clsx(scss.action, [scss.scissors])} selected={action === actions.scissors} onClick={()=>handleActionClick(actions.actionScissors)}><div className={scss.eclipse}></div></button>
+            <button className={clsx(scss.action, [scss.rock])} selected={action === actions.rock} onClick={()=>handleActionClick(actions.actionRock)}><div className={scss.eclipse}></div></button>
+            
         </div>
     )
 }

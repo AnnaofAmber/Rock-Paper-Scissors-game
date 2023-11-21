@@ -43,3 +43,9 @@ font-family: Barlow Semi Condensed;
 
 cursor: pointer;
 }
+
+.btn:hover, .btn:focus{
+  @media only screen and (min-width: 768px) {
+    color: #DB2E4D;
+  }
+}
